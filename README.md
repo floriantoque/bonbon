@@ -59,17 +59,19 @@ export MISTRAL_API_KEY="your_mistral_api_key"
 ```
 
 ## Apps
+[Readme: Story Creator App](services/story-creator-app/README.md) : This app allows you to generate a story.
 
-![Story Creator App](images/story-creator-app.png)
-Readme: [Story Creator App](services/story-creator-app/README.md)
-This app allows you to generate a story.
+![Story Creator App](images/story_creator.png)
 
-![Story Graph App](images/story-graph-app.png)
-Readme: [Story Graph App](services/story-graph-app/README.md)
-This app allows you to generate questions and create a story graph.
+--- 
+[Readme: Story Graph App](services/story-graph-app/README.md) : This app allows you to generate questions and create a story graph.
 
-![Story Player App](images/story-player-app.png)
-Readme: [Story Player App](services/story-player-app/README.md)
-This app allows you to play the story and interact with it.
+![Story Graph App](images/story_graph.png)
+
+---
+[Readme: Story Player App](services/story-player-app/README.md) : This app allows you to play the story and interact with it.
+
+![Story Player App](images/story_player.png)
+
 
 
