@@ -5,14 +5,15 @@ as well as to start and continue story interactions.
 """
 
 import json
-from bb.lib.story_graph.asker import QuestionAnswer
-import networkx as nx
-import matplotlib.pyplot as plt
-from networkx.drawing.nx_pydot import graphviz_layout
-from bb.lib.story_graph.resumer import Resumer
-from bb.lib.story_graph.answer_checker import AnswerChecker
-from bb.lib.story_graph.utils import StoryNode, QuestionNode
 from typing import Literal
+
+import matplotlib.pyplot as plt
+import networkx as nx
+from bb.lib.story_graph.answer_checker import AnswerChecker
+from bb.lib.story_graph.asker import QuestionAnswer
+from bb.lib.story_graph.resumer import Resumer
+from bb.lib.story_graph.utils import QuestionNode, StoryNode
+from networkx.drawing.nx_pydot import graphviz_layout
 
 
 class StoryGraph:

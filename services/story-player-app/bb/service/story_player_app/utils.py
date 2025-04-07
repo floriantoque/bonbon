@@ -1,10 +1,9 @@
 import os
 from pathlib import Path
-from pathlib import Path
-import os
+
+import gradio as gr
 from bb.lib.story_graph.graph import StoryGraph
 from bb.service.story_player_app.player import StoryPlayer
-import gradio as gr
 
 # Configuration
 BONBON_WORKSPACE_DATA = os.getenv("BONBON_WORKSPACE_DATA")

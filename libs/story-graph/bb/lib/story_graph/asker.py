@@ -4,11 +4,12 @@ This module provides functionality to handle questions and answers in the
 story context, including different difficulty levels and cognitive areas.
 """
 
-from bb.lib.llm.llm import LLMMistral
-from rich.progress import Progress
 import time
 from dataclasses import dataclass
 from typing import Literal
+
+from bb.lib.llm.llm import LLMMistral
+from rich.progress import Progress
 
 
 @dataclass

@@ -1,8 +1,8 @@
-from bb.lib.speech_to_text.stt import STTWav2Vec2
-
 import os
-from pathlib import Path
 import time
+from pathlib import Path
+
+from bb.lib.speech_to_text.stt import STTWav2Vec2
 
 
 def main():

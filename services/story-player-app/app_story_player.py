@@ -1,10 +1,11 @@
-import gradio as gr
 import os
+
+import gradio as gr
 from bb.service.story_player_app.utils import (
     get_available_stories,
+    get_node_id_after_answer,
     load_story,
     play_story,
-    get_node_id_after_answer,
 )
 
 BONBON_WORKSPACE_DATA = os.getenv("BONBON_WORKSPACE_DATA")

@@ -5,10 +5,10 @@ like Wav2Vec2 from Hugging Face transformers library. It supports multiple langu
 and audio formats.
 """
 
-import torch
 import librosa
-from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 import numpy as np
+import torch
+from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
 
 class STT:

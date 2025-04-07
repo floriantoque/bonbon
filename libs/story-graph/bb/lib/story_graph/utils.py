@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Literal, Any, Dict
+from typing import Any, Dict, List, Literal
 
 
 @dataclass

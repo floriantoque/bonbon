@@ -1,12 +1,13 @@
-from bb.lib.story_graph.graph import StoryGraph
-from bb.lib.text_to_speech.tts import TTSCoqui
 import os
 from pathlib import Path
-from bb.lib.story_graph.utils import QuestionNode
+
 import numpy as np
+from bb.lib.llm.llm import LLMMistral
 from bb.lib.speech_to_text.stt import STTWav2Vec2
 from bb.lib.story_graph.answer_checker import AnswerChecker
-from bb.lib.llm.llm import LLMMistral
+from bb.lib.story_graph.graph import StoryGraph
+from bb.lib.story_graph.utils import QuestionNode
+from bb.lib.text_to_speech.tts import TTSCoqui
 
 
 class StoryPlayer:

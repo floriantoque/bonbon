@@ -1,7 +1,7 @@
-from bb.lib.text_to_speech import TTSCoqui
-
 import os
 from pathlib import Path
+
+from bb.lib.text_to_speech import TTSCoqui
 
 
 def main():

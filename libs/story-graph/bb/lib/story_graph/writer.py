@@ -3,10 +3,11 @@
 This module provides functionality to generate stories using an LLM.
 """
 
-from bb.lib.llm.llm import LLMMistral
-import random
 import os
+import random
 from pathlib import Path
+
+from bb.lib.llm.llm import LLMMistral
 
 
 class Writer:

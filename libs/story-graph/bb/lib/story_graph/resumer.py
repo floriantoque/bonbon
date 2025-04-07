@@ -3,7 +3,7 @@ This module contains the Resumer class, which is used to resume a story.
 """
 
 from bb.lib.llm.llm import LLMMistral
-from bb.lib.story_graph.utils import StoryNode, QuestionNode
+from bb.lib.story_graph.utils import QuestionNode, StoryNode
 
 
 class Resumer:

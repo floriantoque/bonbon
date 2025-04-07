@@ -1,5 +1,6 @@
-from bb.lib.large_language_model import LLMMistral
 import time
+
+from bb.lib.large_language_model import LLMMistral
 
 
 def main():
