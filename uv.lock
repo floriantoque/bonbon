@@ -11,6 +11,7 @@ resolution-markers = [
 members = [
     "bonbon",
     "story-creator-app",
+    "story-graph-app",
 ]
 
 [[package]]
@@ -1592,6 +1593,22 @@ wheels = [
 name = "story-creator-app"
 version = "0.1.0"
 source = { editable = "services/story-creator-app" }
+dependencies = [
+    { name = "bb-lib-story-graph" },
+    { name = "gradio", version = "4.44.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "gradio", version = "5.23.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "bb-lib-story-graph", directory = "libs/story-graph" },
+    { name = "gradio" },
+]
+
+[[package]]
+name = "story-graph-app"
+version = "0.1.0"
+source = { editable = "services/story-graph-app" }
 dependencies = [
     { name = "bb-lib-story-graph" },
     { name = "gradio", version = "4.44.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },

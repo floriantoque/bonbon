@@ -27,7 +27,7 @@ uv sync --reinstall
 ## Usage
 
 ```bash
-uv run python app_story_player.py
+uv run python app.py
 ```
 
 This will start the Gradio web interface at `http://localhost:7860`.

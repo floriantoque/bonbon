@@ -4,7 +4,6 @@ from pathlib import Path
 from bb.lib.story_graph import AnswerChecker
 from bb.lib.story_graph.asker import Asker
 from bb.lib.story_graph.graph import StoryGraph
-from bb.lib.story_graph.utils import QuestionNode, StoryNode
 from bb.lib.story_graph.writer import Writer
 
 

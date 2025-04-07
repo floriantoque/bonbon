@@ -40,5 +40,5 @@ indent-style = "space"
 line-ending = "auto"
 
 [tool.uv.workspace]
-members = ["services/story-creator-app"]
+members = ["services/story-creator-app", "services/story-graph-app"]
 
