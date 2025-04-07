@@ -1,0 +1,22 @@
+[project]
+name = "bb-lib-story-graph"
+version = "0.1.0"
+description = "Story Graph package"
+requires-python = ">=3.8, <3.12"
+dependencies = [
+    "bb-lib-large-language-model",
+    "pydot",
+    "networkx",
+    "matplotlib",
+    "rich",
+]
+
+[tool.uv.sources]
+bb-lib-large-language-model = {path = "../large-language-model"}
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["bb.lib.story_graph"] 

@@ -1,0 +1,24 @@
+[project]
+name = "story-player-app"
+version = "0.1.0"
+description = "Story Player App"
+readme = "README.md"
+requires-python = ">=3.9, <3.12"
+dependencies = [
+    "bb-lib-text-to-speech",
+    "bb-lib-speech-to-text",
+    "bb-lib-story-graph",
+    "gradio",
+]
+
+[tool.uv.sources]
+bb-lib-text-to-speech = {path = "../../libs/text-to-speech"}
+bb-lib-speech-to-text = {path = "../../libs/speech-to-text"}
+bb-lib-story-graph = {path = "../../libs/story-graph"}
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["bb.service.story_player_app"] 

@@ -1,0 +1,20 @@
+[project]
+name = "bb-lib-speech-to-text"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9, <3.12"
+dependencies = [
+    "librosa",  
+    "transformers",
+    "torch",
+    "torchaudio",
+    "accelerate",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["bb.lib.speech_to_text"] 

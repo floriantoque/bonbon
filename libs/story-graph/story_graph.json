@@ -1,0 +1,91 @@
+{
+  "story_0": {
+    "id": "story_0",
+    "content": "\n        Aujourd'hui, nous allons vous raconter une histoire amusante sur Mickey et Donald. Ils partent en qu\u00eate d'un tr\u00e9sor cach\u00e9 dans le parc d'attractions. ",
+    "type": "StoryNode",
+    "children": [
+      "question_0_0",
+      "question_0_1"
+    ],
+    "parents": []
+  },
+  "story_1": {
+    "id": "story_1",
+    "content": "\n\n        Mickey et Donald re\u00e7oivent une carte au tr\u00e9sor de Dingo, qui leur dit que le tr\u00e9sor est cach\u00e9 quelque part dans le parc. Ils sont tr\u00e8s excit\u00e9s et se mettent en route imm\u00e9diatement. ",
+    "type": "StoryNode",
+    "children": [
+      "question_1_0",
+      "question_1_1"
+    ],
+    "parents": [
+      "question_0_0",
+      "question_0_1"
+    ]
+  },
+  "story_2": {
+    "id": "story_2",
+    "content": "\n\n        En chemin, ils rencontrent Minnie, qui leur donne un indice : \"Cherchez l\u00e0 o\u00f9 les rires r\u00e9sonnent le plus fort.\" Mickey et Donald se regardent, perplexes. \"O\u00f9 est-ce que les rires r\u00e9sonnent le plus fort dans le parc ?\" se demande Mickey.\n\n        Ils d\u00e9cident de se rendre \u00e0 la maison hant\u00e9e, pensant que les rires des enfants qui ont peur pourraient \u00eatre les plus forts. Mais l\u00e0-bas, ils ne trouvent que des fant\u00f4mes qui rigolent. \"Ce n'est pas ici !\" s'exclame Donald, frustr\u00e9.\n\n        Ils continuent leur qu\u00eate et arrivent au man\u00e8ge des tasses de th\u00e9 tournantes. Les enfants rient tellement fort en essayant de ne pas tomber ! \"C'est peut-\u00eatre ici !\" dit Mickey, plein d'espoir. Ils cherchent partout, mais ne trouvent rien.\n\n        Finalement, ils se rendent au stand de barbe \u00e0 papa, o\u00f9 les enfants rient en essayant de manger sans se salir. \"C'est ici !\" s'\u00e9crie Donald, en voyant une petite bo\u00eete cach\u00e9e sous le stand. Ils l'ouvrent et trouvent le tr\u00e9sor : des bonbons en forme de Mickey et Donald !\n\n        Ils sont ravis et remercient Minnie pour son indice. \"Nous avons r\u00e9ussi notre qu\u00eate !\" dit Mickey, en riant. Et ils mangent tous les bonbons en c\u00e9l\u00e9brant leur victoire.\n    ",
+    "type": "StoryNode",
+    "children": [],
+    "parents": [
+      "question_1_0",
+      "question_1_1"
+    ]
+  },
+  "question_0_0": {
+    "id": "question_0_0",
+    "content": "O\u00f9 Mickey et Donald vont-ils chercher un tr\u00e9sor cach\u00e9 ? ",
+    "type": "QuestionNode",
+    "children": [
+      "story_1"
+    ],
+    "parents": [
+      "story_0"
+    ],
+    "answer": " dans le parc d'attractions",
+    "difficulty": "easy",
+    "cognitive_area": null
+  },
+  "question_0_1": {
+    "id": "question_0_1",
+    "content": "Quels sont les personnages principaux de l'histoire et o\u00f9 cherchent-ils un tr\u00e9sor cach\u00e9 ? ",
+    "type": "QuestionNode",
+    "children": [
+      "story_1"
+    ],
+    "parents": [
+      "story_0"
+    ],
+    "answer": " Les personnages principaux sont Mickey et Donald, et ils cherchent un tr\u00e9sor cach\u00e9 dans le parc d'attractions.",
+    "difficulty": "difficult",
+    "cognitive_area": null
+  },
+  "question_1_0": {
+    "id": "question_1_0",
+    "content": "Qui a envoy\u00e9 la carte au tr\u00e9sor \u00e0 Mickey et Donald ? ",
+    "type": "QuestionNode",
+    "children": [
+      "story_2"
+    ],
+    "parents": [
+      "story_1"
+    ],
+    "answer": " Dingo",
+    "difficulty": "easy",
+    "cognitive_area": null
+  },
+  "question_1_1": {
+    "id": "question_1_1",
+    "content": "Quelle est la premi\u00e8re chose que Mickey et Donald font apr\u00e8s avoir re\u00e7u la carte au tr\u00e9sor de Dingo? ",
+    "type": "QuestionNode",
+    "children": [
+      "story_2"
+    ],
+    "parents": [
+      "story_1"
+    ],
+    "answer": " Ils se mettent en route imm\u00e9diatement.",
+    "difficulty": "difficult",
+    "cognitive_area": null
+  }
+}

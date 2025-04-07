@@ -1,0 +1,12 @@
+[project]
+name = "bonbon"
+version = "0.1.0"
+description = "Bonbon project"
+readme = "README.md"
+requires-python = ">=3.9, <3.12" # Coqui TTS requires <=3.12
+
+
+depedencies = [
+    "pre-commit>=3.5.0"
+]
+
