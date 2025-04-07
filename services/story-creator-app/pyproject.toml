@@ -1,20 +1,20 @@
 [project]
-name = "bb-lib-text-to-speech"
+name = "story-creator-app"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9, <3.12"
 dependencies = [
-    "coqui-tts==0.25.0",
-    "torch==2.1.2",
-    "torchaudio==2.1.2",
-    "elevenlabs",
-    "python-dotenv",
+    "bb-lib-story-graph",
+    "gradio",
 ]
+
+[tool.uv.sources]
+bb-lib-story-graph = {path = "../../libs/story-graph"}
 
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["bb.lib.text_to_speech"] 
+packages = ["bb.service.story_creator_app"] 

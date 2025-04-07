@@ -7,7 +7,7 @@ from bb.lib.speech_to_text.stt import STTWav2Vec2
 from bb.lib.story_graph.answer_checker import AnswerChecker
 from bb.lib.story_graph.graph import StoryGraph
 from bb.lib.story_graph.utils import QuestionNode
-from bb.lib.text_to_speech.tts import TTSCoqui
+from bb.lib.text_to_speech import get_tts_model
 
 
 class StoryPlayer:
@@ -15,13 +15,16 @@ class StoryPlayer:
         self.story_graph = story_graph
         self.data_path = Path(os.getenv("BONBON_WORKSPACE_DATA"))
 
-    def play(self, current_story_node_id: str) -> tuple[str, list[str]]:
+    def play(
+        self, current_story_node_id: str, tts_model_name: str
+    ) -> tuple[str, list[str]]:
         print(f"Playing story: {current_story_node_id}")
         node = self.story_graph.get_node(current_story_node_id)
 
         # Generate audio for the story node content
         content = node.content
-        tts = TTSCoqui()
+        tts_model = get_tts_model(tts_model_name)
+        tts = tts_model(language=self.story_graph.language)
         output_path = self.data_path / "current_story_node_content.wav"
         tts.generate_audio(content, output_path)
         print(f"Content generated: {content}")
@@ -46,14 +49,22 @@ class StoryPlayer:
         stt = STTWav2Vec2("French")
         sampling_rate, audio = sound_recorder
 
-        transcription = stt.transcribe_audio(sampling_rate=sampling_rate, audio=audio)
+        transcription = stt.transcribe_audio(
+            sampling_rate=sampling_rate, audio=audio
+        )
 
         answer_checker = AnswerChecker()
-        parent_node_id = self.story_graph.get_node(current_question_node_id).parents[0]
+        parent_node_id = self.story_graph.get_node(
+            current_question_node_id
+        ).parents[0]
         answer_correct = answer_checker.is_correct(
             content=self.story_graph.get_node(parent_node_id).content,
-            question=self.story_graph.get_node(current_question_node_id).content,
-            gt_answer=self.story_graph.get_node(current_question_node_id).answer,
+            question=self.story_graph.get_node(
+                current_question_node_id
+            ).content,
+            gt_answer=self.story_graph.get_node(
+                current_question_node_id
+            ).answer,
             listener_answer=transcription,
         )
         print("--------------------------------")
@@ -64,9 +75,9 @@ class StoryPlayer:
         print(f"Listener answer: {transcription}")
         print("--------------------------------")
         if answer_correct:
-            next_node_id = self.story_graph.get_node(current_question_node_id).children[
-                0
-            ]
+            next_node_id = self.story_graph.get_node(
+                current_question_node_id
+            ).children[0]
         else:
             question_to_pass.append(current_question_node_id)
             next_node_id = self.story_graph.get_next_question_node_id(
@@ -80,7 +91,7 @@ class StoryPlayer:
         return answer_correct, next_node_id, question_to_pass
 
     def play_answer_feedback(
-        self, answer_correct: bool, current_question_node_id: str
+        self, answer_correct: bool, tts_model_name: str
     ) -> str:
         # Generate prompt for the feedback
         if answer_correct:
@@ -96,16 +107,15 @@ class StoryPlayer:
                 "better next time. "
             )
 
-        story_language = "French"
-
-        if story_language == "French":
+        if self.story_graph.language == "French":
             prompt += " Give the feedback in French"
         # Generate feedback text
         llm = LLMMistral()
         text = llm.generate_text(prompt)
 
         # Generate audio for the feedback
-        tts = TTSCoqui()
+        tts_model = get_tts_model(tts_model_name)
+        tts = tts_model(language=self.story_graph.language)
         output_path = self.data_path / "answer_feedback.wav"
         tts.generate_audio(text, output_path)
 

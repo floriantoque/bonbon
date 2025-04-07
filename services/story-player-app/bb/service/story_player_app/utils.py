@@ -29,10 +29,14 @@ def load_story(story_file):
     return story_graph, play_button, current_story_node_id
 
 
-def play_story(story_graph, current_story_node_id, question_to_pass):
+def play_story(
+    story_graph, current_story_node_id, question_to_pass, stt_model
+):
     """Play the story."""
     story_player = StoryPlayer(story_graph)
-    audio_output, children_node_ids = story_player.play(current_story_node_id)
+    audio_output, children_node_ids = story_player.play(
+        current_story_node_id, stt_model
+    )
 
     # Case 1: End of story
     if len(children_node_ids) == 0:
@@ -66,7 +70,11 @@ def play_story(story_graph, current_story_node_id, question_to_pass):
 
 
 def get_node_id_after_answer(
-    story_graph, current_question_node_id, sound_recorder, question_to_pass
+    story_graph,
+    current_question_node_id,
+    sound_recorder,
+    question_to_pass,
+    stt_model,
 ):
     """Check if the answer is correct."""
     if question_to_pass is None:
@@ -78,10 +86,12 @@ def get_node_id_after_answer(
         )
     )
     audio_output = story_player.play_answer_feedback(
-        answer_correct, current_question_node_id
+        answer_correct, stt_model
     )
 
-    play_button = gr.Button("Continue the story", visible=True, variant="primary")
+    play_button = gr.Button(
+        "Continue the story", visible=True, variant="primary"
+    )
     sound_recorder = gr.Audio(
         label="Sound Recorder",
         visible=False,

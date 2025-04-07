@@ -26,6 +26,12 @@ def create_demo():
                     interactive=True,
                     value=None,
                 )
+                stt_model = gr.Dropdown(
+                    choices=["TTSCoqui", "TTSElevenLabs"],
+                    label="TTS Model",
+                    interactive=True,
+                    value="TTSElevenLabs",
+                )
                 current_story_node_id = gr.Textbox(
                     label="Current Story Node ID", visible=False
                 )
@@ -52,8 +58,18 @@ def create_demo():
 
         play_button.click(
             fn=play_story,
-            inputs=[story_graph, current_story_node_id, question_to_pass],
-            outputs=[audio_output, current_story_node_id, play_button, sound_recorder],
+            inputs=[
+                story_graph,
+                current_story_node_id,
+                question_to_pass,
+                stt_model,
+            ],
+            outputs=[
+                audio_output,
+                current_story_node_id,
+                play_button,
+                sound_recorder,
+            ],
         )
 
         sound_recorder.stop_recording(
@@ -63,6 +79,7 @@ def create_demo():
                 current_story_node_id,
                 sound_recorder,
                 question_to_pass,
+                stt_model,
             ],
             outputs=[
                 audio_output,

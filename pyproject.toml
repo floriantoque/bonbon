@@ -5,8 +5,40 @@ description = "Bonbon project"
 readme = "README.md"
 requires-python = ">=3.9, <3.12" # Coqui TTS requires <=3.12
 
-
-depedencies = [
+dependencies = [
     "pre-commit>=3.5.0"
 ]
+
+[tool.ruff]
+line-length = 79
+target-version = "py39"
+
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = ["E", "F", "I"]
+ignore = []
+
+# Allow autofix for all enabled rules
+fixable = ["ALL"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".venv",
+    "__pypackages__",
+    "build",
+    "dist",
+    "migrations",
+]
+
+[tool.ruff.isort]
+known-first-party = ["bb"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.uv.workspace]
+members = ["services/story-creator-app"]
 
