@@ -68,6 +68,10 @@ export MISTRAL_API_KEY="your_mistral_api_key"
 
 ![Story Graph App](images/story_graph.png)
 
+Plot of the story graph:
+
+![Story Graph Plot](images/story_graph_plot.png)
+
 ---
 [Readme: Story Player App](services/story-player-app/README.md) : This app allows you to play the story and interact with it.
 
