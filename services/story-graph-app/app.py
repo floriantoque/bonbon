@@ -37,16 +37,13 @@ def save_story_dict(story_dict: str, story_file_name: str):
     story_name = story_file_name.replace(".txt", "")
     story_graph = StoryGraph()
     story_graph.load_graph(story_dict)
-    story_graph.plot_graph(
-        Path(os.getenv("BONBON_WORKSPACE_DATA"))
-        / "story_graphs"
-        / f"{story_name}.svg"
-    )
-    story_graph.save_graph(
-        Path(os.getenv("BONBON_WORKSPACE_DATA"))
-        / "story_graphs"
-        / f"{story_name}.json"
-    )
+
+    folder = Path(os.getenv("BONBON_WORKSPACE_DATA")) / "story_graphs"
+    if not folder.exists():
+        folder.mkdir(parents=True)
+        
+    story_graph.plot_graph(folder / f"{story_name}.svg")
+    story_graph.save_graph(folder / f"{story_name}.json")
 
 
 def create_demo():
