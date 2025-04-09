@@ -7,7 +7,7 @@ Bonbon is an educational platform that creates interactive stories for children,
 The platform consists of several key components:
 
 - **Story Player App**: A Gradio-based web interface that allows children to interact with stories through speech
-- **Text-to-Speech Library**: Uses Coqui TTS to convert story text into natural-sounding speech
+- **Text-to-Speech Library**: Uses Coqui TTS and ElevenLabs to convert story text into natural-sounding speech
 - **Speech-to-Text Library**: Employs Wav2Vec2 for accurate transcription of children's responses
 - **Story Graph Library**: Manages the flow and branching of interactive stories based on user responses
 

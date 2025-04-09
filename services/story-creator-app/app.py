@@ -63,8 +63,10 @@ def create_story(
 
 def save_story(story: str, filename: str):
     writer = Writer()
-    workspace_data = Path(os.getenv("BONBON_WORKSPACE_DATA"))
-    writer.save_story(story, workspace_data / filename)
+    folder = Path(os.getenv("BONBON_WORKSPACE_DATA")) / "story_texts"
+    if not folder.exists():
+        folder.mkdir(parents=True)
+    writer.save_story(story, folder / filename)
 
 
 def create_demo():
